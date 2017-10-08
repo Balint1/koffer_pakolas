@@ -1,5 +1,6 @@
 package hu.lokter.mi;
 
+import algorithm.StairsAlg;
 import model.Item;
 import model.Koffer;
 
@@ -14,8 +15,15 @@ public class App {
 
     public void start() {
         //TODO startApp
-        Koffer k = new Koffer(new ArrayList< Item>(),3,6);
-        System.out.print(k);
+        dataScanner = new DataScanner();
+        dataScanner.scanData();
+        koffer = dataScanner.getKoffer();
+       // System.out.print(koffer.enoughSpace(koffer.getItems().get(0),0,0));
+        //koffer.putItemToMatrix(koffer.getItems().get(0),0,0);
+        StairsAlg alg = new StairsAlg(koffer);
+        alg.order();
+
+        System.out.print(koffer);
     }
 
 }

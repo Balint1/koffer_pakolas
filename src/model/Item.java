@@ -4,13 +4,15 @@ package model;
  * Created by Balint on 2017. 10. 08..
  */
 public class Item {
+    private int id;
     private int height;
     private int width;
     boolean selected = false;
 
-    public Item(int height, int width) {
+    public Item(int height, int width,int id) {
         this.height = height;
         this.width = width;
+        this.id = id;
     }
 
     public int getHeight() {
@@ -35,5 +37,9 @@ public class Item {
 
     public void setSelected(boolean selected) {
         this.selected = selected;
+    }
+
+    public int getId() {
+        return id;
     }
 }

@@ -36,6 +36,22 @@ public class Koffer {
             for(int j = 0;j<height;j++)
                 matrix[i][j] = 0;
     }
+    public void putItemToMatrix(Item item,int x,int y)
+    {
+        item.selected = true;
+        for (int i = x;i<item.getWidth();i++)
+            for(int j = y; j < item.getHeight();j++)
+                matrix[i][j] = item.getId();
+    }
+    public boolean enoughSpace(Item item,int x,int y)
+    {
+        for (int i = x;i<item.getWidth();i++)
+            for(int j = y; j < item.getHeight();j++)
+                if( i >= width || j >= height || matrix[i][j] != 0)
+                    return false;
+        return true;
+    }
+
     @Override
     public String toString()
     {
