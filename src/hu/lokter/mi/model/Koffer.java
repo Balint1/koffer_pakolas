@@ -1,4 +1,4 @@
-package model;
+package hu.lokter.mi.model;
 
 import java.util.ArrayList;
 
@@ -38,15 +38,15 @@ public class Koffer {
     }
     public void putItemToMatrix(Item item,int x,int y)
     {
-        item.selected = true;
-        for (int i = x;i<item.getWidth();i++)
-            for(int j = y; j < item.getHeight();j++)
+        for (int i = x;i< x + item.getWidth();i++)
+            for(int j = y; j < y + item.getHeight();j++)
                 matrix[i][j] = item.getId();
+        items.remove(item);
     }
     public boolean enoughSpace(Item item,int x,int y)
     {
-        for (int i = x;i<item.getWidth();i++)
-            for(int j = y; j < item.getHeight();j++)
+        for (int i = x;i< x + item.getWidth();i++)
+            for(int j = y; j < y + item.getHeight();j++)
                 if( i >= width || j >= height || matrix[i][j] != 0)
                     return false;
         return true;
@@ -58,10 +58,19 @@ public class Koffer {
         String resault = "";
         for(int j = 0;j<height;j++) {
             for (int i = 0; i < width; i++) {
-                resault += matrix[i][j] + ( i == width-1 ? "" : " ");
+                resault += matrix[i][j] + ( i == width-1 ? "" : "\t");
             }
             resault+="\n";
         }
         return resault;
+    }
+    public ArrayList<Item> getUnselectedItems()
+    {
+        ArrayList<Item> unselected = new ArrayList<>();
+        for (Item item:items) {
+            if(!item.selected)
+                unselected.add(item);
+        }
+        return unselected;
     }
 }

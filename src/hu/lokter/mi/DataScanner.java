@@ -1,12 +1,11 @@
 package hu.lokter.mi;
 
-import model.Item;
-import model.Koffer;
+import hu.lokter.mi.model.Item;
+import hu.lokter.mi.model.Koffer;
 
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 /**
  * Created by Balint on 2017. 10. 08..

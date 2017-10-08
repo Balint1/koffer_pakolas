@@ -1,6 +1,6 @@
-package algorithm;
+package hu.lokter.mi.algorithm;
 
-import model.Koffer;
+import hu.lokter.mi.model.Koffer;
 
 /**
  * Created by Balint on 2017. 10. 08..

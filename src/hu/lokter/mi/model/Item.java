@@ -1,4 +1,4 @@
-package model;
+package hu.lokter.mi.model;
 
 /**
  * Created by Balint on 2017. 10. 08..
